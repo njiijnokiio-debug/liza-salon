@@ -235,4 +235,10 @@
     a.setAttribute('target', '_blank');
     if (!a.getAttribute('href')) a.setAttribute('href', BOOK);
   });
+
+  /* ---------------- map pin: hide once user interacts with the map ---------------- */
+  var pin = doc.querySelector('.map__pin');
+  if (pin) {
+    window.addEventListener('blur', function () { pin.style.display = 'none'; }, { once: true });
+  }
 })();
